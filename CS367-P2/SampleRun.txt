@@ -1,0 +1,134 @@
+Enter username : asd
+Enter password : asd
+Incorrect username or password
+Enter 'exit' to exit program or anything else to go back to login
+asd
+Enter username : Roney
+Enter password : pikachu
+Enter option : v:all
+
+Laptops:
+Apple Macbook Air [Price:$854 Rating:4.5 stars]
+Lenovo ThinkPad [Price:$364 Rating:4.5 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+HP Pavilion [Price:$600 Rating:1.0 stars]
+
+Tablets:
+Apple iPad Air 2 [Price:$599 Rating:4.5 stars]
+Microsoft Surface Pro 3 [Price:$799 Rating:4.5 stars]
+
+Consoles:
+Microsoft Xbox One [Price:$349 Rating:3.5 stars]
+Sony PS4 [Price:$399 Rating:3.5 stars]
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Nintendo Entertainment System [Price:$90 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+
+Phones:
+Apple iPhone 6 [Price:$719 Rating:4.5 stars]
+Google Nexus 6 [Price:$649 Rating:4.5 stars]
+Motorola Moto X [Price:$550 Rating:4.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+
+"Smart" Watches:
+Apple Watch [Price:$350 Rating:3.5 stars]
+Motorola Moto 360 [Price:$250 Rating:4.0 stars]
+Samsung Gear Live [Price:$150 Rating:3.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+
+Fancy Face Computers:
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Google Glass [Price:$1500 Rating:4.0 stars]
+Microsoft HoloLens [Price:$1000 Rating:4.0 stars]
+Samsung Gear VR [Price:$200 Rating:3.5 stars]
+
+Fitness Trackers:
+FitBit [Price:$100 Rating:4.0 stars]
+Apple iBand [Price:$250 Rating:4.0 stars]
+Samsung Gear Fit [Price:$150 Rating:3.5 stars]
+
+Enter option : v:wishlist
+Microsoft Surface Pro 3 [Price:$799 Rating:4.5 stars]
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : v:instock
+Microsoft Surface Pro 3 [Price:$799 Rating:4.5 stars]
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Enter option : c
+$3000
+Enter option : b
+Bought Microsoft Surface Pro 3
+Bought Occulus Rift
+Enter option : c
+$1801
+Enter option : v:wishlist
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : s:Samsung
+Samsung Gear Live [Price:$150 Rating:3.0 stars]
+Samsung Gear VR [Price:$200 Rating:3.5 stars]
+Samsung Gear Fit [Price:$150 Rating:3.5 stars]
+Enter option : a:Samsung Gear Fit
+Added to wishlist
+Enter option : v:wishlist
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+Samsung Gear Fit [Price:$150 Rating:3.5 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : r:FitBit
+Removed from wishlist
+Enter option : v:wishlist
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+Samsung Gear Fit [Price:$150 Rating:3.5 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : l
+Logged Out
+Enter 'exit' to exit program or anything else to go back to login
+asd
+Enter username : JiaShen
+Enter password : iambroke
+Enter option : v:wishlist
+Microsoft HoloLens [Price:$1000 Rating:4.0 stars]
+Apple Macbook Air [Price:$854 Rating:4.5 stars]
+Apple iPhone 6 [Price:$719 Rating:4.5 stars]
+Apple iPad Air 2 [Price:$599 Rating:4.5 stars]
+Sony PS4 [Price:$399 Rating:3.5 stars]
+Apple Watch [Price:$350 Rating:3.5 stars]
+Apple iBand [Price:$250 Rating:4.0 stars]
+Enter option : v:instock
+Microsoft HoloLens [Price:$1000 Rating:4.0 stars]
+Apple Macbook Air [Price:$854 Rating:4.5 stars]
+Enter option : c
+$0
+Enter option : b
+Insufficient funds for Microsoft HoloLens
+Insufficient funds for Apple Macbook Air
+Enter option : v:wishlist
+Microsoft HoloLens [Price:$1000 Rating:4.0 stars]
+Apple Macbook Air [Price:$854 Rating:4.5 stars]
+Apple iPhone 6 [Price:$719 Rating:4.5 stars]
+Apple iPad Air 2 [Price:$599 Rating:4.5 stars]
+Sony PS4 [Price:$399 Rating:3.5 stars]
+Apple Watch [Price:$350 Rating:3.5 stars]
+Apple iBand [Price:$250 Rating:4.0 stars]
+Enter option : s:asd
+Enter option : l
+Logged Out
+Enter 'exit' to exit program or anything else to go back to login
+exit
+
