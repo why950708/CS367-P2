@@ -134,6 +134,8 @@ public class DLinkedList<E> implements ListADT<E>{
 	 * @throws IndexOutOfBoundsException if pos is less than 0 or greater than
 	 * or equal to size()
 	 */
+	 // 今晚上接着写 
+	// PS： 我觉得就在这上面修改也行啊 大家都收的到通知
 	public E remove(int pos) {
 		if(pos < 0 || pos >= numItems)	throw new IndexOutOfBoundsException();
 		// remove the head
