@@ -136,6 +136,7 @@ public class DLinkedList<E> implements ListADT<E>{
 	 */
 	 // 今晚上接着写 
 	// PS： 我觉得就在这上面修改也行啊 大家都收的到通知
+	//也行。。。。。
 	public E remove(int pos) {
 		if(pos < 0 || pos >= numItems)	throw new IndexOutOfBoundsException();
 		// remove the head
