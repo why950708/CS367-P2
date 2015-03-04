@@ -1,3 +1,14 @@
+///////////////////////////////////////////////////////////////////////////////
+//                   ALL STUDENTS COMPLETE THESE SECTIONS
+// Main Class File:  (name of main application class)
+// File:             (name of this class's file)
+// Semester:         CS302 Spring 2015
+//
+// Author:           (your name and email address)
+// CS Login:         (your login name)
+// Lecturer's Name:  (name of your lecturer)
+// Lab Section:      (your lab section number)
+//
 /**
  * Generic doubly linked list node. It serves as the basic building block for 
  * storing data in doubly linked chains of nodes.
