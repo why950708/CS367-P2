@@ -187,4 +187,8 @@ public class DLinkedList<E> implements ListADT<E>{
 		numItems--;
 		return poorNode.getData();
 	}
+	public int size(){
+		
+		return numItems;
+	}
 }
