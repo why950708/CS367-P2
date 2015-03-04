@@ -106,7 +106,7 @@ public class AmazonStore {
 	 */
 	public static void loadProducts(String fileName){
 		// create file 
-		File fileProducts = new File("Products.txt");
+		File fileProducts = new File(fileName);
 		//create scanner for the product file
 		Scanner scanProducts = new Scanner(fileProducts);
 		// read these files
