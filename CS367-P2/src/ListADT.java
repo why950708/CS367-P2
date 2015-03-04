@@ -1,3 +1,14 @@
+///////////////////////////////////////////////////////////////////////////////
+//                   ALL STUDENTS COMPLETE THESE SECTIONS
+// Main Class File:  (name of main application class)
+// File:             (name of this class's file)
+// Semester:         CS302 Spring 2015
+//
+// Author:           (your name and email address)
+// CS Login:         (your login name)
+// Lecturer's Name:  (name of your lecturer)
+// Lab Section:      (your lab section number)
+//
 /**
  * A List is a general container storing a contiguous collection of items,
  * that is position-oriented using zero-based indexing and where duplicates
