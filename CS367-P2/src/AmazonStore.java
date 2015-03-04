@@ -1,6 +1,37 @@
+///////////////////////////////////////////////////////////////////////////////
+import java.io.File;
+import java.io.FileNotFoundException;
+//                   ALL STUDENTS COMPLETE THESE SECTIONS
+// Title:            (P2)
+// Files:            (DLinkedList.java, InsufficientCreditException.java, ListADT.java, Listnode.java, User.java, Products.java)
+// Semester:         CS367 Spring 2015
+//
+// Author:           (Chenyuan Zhang)
+// Email:            (czhang356@wisc.edu)
+// CS Login:         (chenyuan)
+// Lecturer's Name:  (Jim)
+// Lab Section:      no
+//
+//////////////////// PAIR PROGRAMMERS COMPLETE THIS SECTION ////////////////////
+//
+//                   CHECK ASSIGNMENT PAGE TO see IF PAIR-PROGRAMMING IS ALLOWED
+//                   If pair programming is allowed:
+//                   1. Read PAIR-PROGRAMMING policy (in cs302 policy) 
+//                   2. choose a partner wisely
+//                   3. REGISTER THE TEAM BEFORE YOU WORK TOGETHER 
+//                      a. one partner creates the team
+//                      b. the other partner must join the team
+//                   4. complete this section for each program file.
+//
+// Pair Partner:     (name of your pair programming partner)
+// Email:            (email address of your programming partner)
+// CS Login:         (partner's login name)
+// Lecturer's Name:  (name of your partner's lecturer)
+// Lab Section:      (your partner's lab section number)
+//
 import java.util.Scanner;
 
-//wanghongyishishabi
+
 public class AmazonStore {
 
 	//Store record of users and products
@@ -13,7 +44,7 @@ public class AmazonStore {
 
 
 	//main method
-	public static void main(String args[]) {
+	public static void main(String args[]) throws FileNotFoundException {
 
 
 		//Populate the two lists using the input files: Products.txt User1.txt User2.txt ... UserN.txt
@@ -75,7 +106,20 @@ public class AmazonStore {
 	 * 
 	 * @param fileName name of the file to read
 	 */
-	public static void loadProducts(String fileName){
+	public static void loadProducts(String fileName) throws FileNotFoundException{
+		// create file 
+		File fileProducts = new File(fileName);
+		//create scanner for the product file
+		Scanner scanProducts = new Scanner(fileProducts);
+		// read these files
+		while(scanProducts.hasNextLine()) {
+			String [] productInfo = scanProducts.nextLine().split("#");
+		
+		// create product objects
+			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Integer.parseInt(productInfo[3]));
+		// add them to product list
+			products.add(myproduct);
+		}
 	}
 
 	/**
@@ -86,7 +130,19 @@ public class AmazonStore {
 	 * 
 	 * @param fileName name of the file to read
 	 */
-	public static void loadUser(String fileName){
+	public static void loadUser(String fileName) throws FileNotFoundException{
+		File fileUser = new File(fileName);
+		Scanner scanUser = new Scanner(fileUser);
+		// read user info
+		String [] userInfo = scanUser.nextLine().split("#");
+		// create user object
+		User newUser = new User(userInfo[0],userInfo[1],Integer.parseInt(userInfo[2]));
+		// add the user to the user list
+		users.add(newUser);
+		// read user wish list
+		
+		// add them to the wish  list
+		
 	}
 
 	/**
