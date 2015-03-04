@@ -139,23 +139,41 @@ public class DLinkedList<E> implements ListADT<E>{
 	//也行。。。。。
 	public E remove(int pos) {
 		if(pos < 0 || pos >= numItems)	throw new IndexOutOfBoundsException();
+		Listnode<E> curr = head;
+		// the deleted node
+		Listnode<E> poorNode = null;
 		// remove the head
 		if(pos == 0) {
+			poorNode = head;
 			head = head.getNext();
 			head.setPrev(null);
-			numItems--;
-			return head.getData();
-			
 		}
 		// remove the tail
-		if(pos == numItems - 1)
-		
+		if(pos == numItems - 1) {
+			poorNode = tail;
+			// traverse to the last second node
+			for(int i = 0; i < numItems -2; i++)
+				curr = curr.getNext();
+			// pont to null
+			curr.setNext(null);
+			// update tail
+			tail = curr;
+		}
 		// general case
-		return null;
-	}
-	
-	public int size(){
+		else {
+			// traverse to the node just before the deleted node
+			for(int i = 0; i < pos - 1; i++)
+				curr = curr.getNext();
+			// get the deleted node
+			poorNode = curr.getNext();
+			// point to the node after the deleted node
+			curr.setNext(poorNode.getNext());
+			// set the node after the deleted node prev to the current node
+			curr.getNext().setPrev(curr);
+			
+		}
 		
-		return 0;
+		numItems--;
+		return poorNode.getData();
 	}
 }
