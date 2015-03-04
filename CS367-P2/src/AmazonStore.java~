@@ -105,6 +105,19 @@ public class AmazonStore {
 	 * @param fileName name of the file to read
 	 */
 	public static void loadProducts(String fileName){
+		// create file 
+		File fileProducts = new File("Products.txt");
+		//create scanner for the product file
+		Scanner scanProducts = new Scanner(fileProducts);
+		// read these files
+		while(scanProducts.hasNextLine()) {
+			String [] productInfo = scanProducts.nextLine().split("#");
+		
+		// create product objects
+			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Integer.parseInt(productInfo[3]));
+		// add them to product list
+			products.add(myproduct);
+		}
 	}
 
 	/**
