@@ -52,7 +52,6 @@ public class User {
      * @param product the Product to add
      */
 	public void addToWishList(Product product){
-		//add to the wishlsit.
 	this.wishlist.add(Product);
 	
 	}
@@ -64,7 +63,7 @@ public class User {
      * @return the product on success, null if no such product found
      */
 	public Product removeFromWishList(String productName){
-		
+		return null;
 	}
 	
 	/**
