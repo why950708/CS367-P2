@@ -14,9 +14,5 @@ public class InsufficientCreditException extends Exception {
 		return message;
 	}
 	
-	@Override
-	public String toString(){
-		return this.getMessage();
-	}
 	
 }
