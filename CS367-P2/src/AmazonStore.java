@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-
+//wanghongyishishabi
 public class AmazonStore {
 
 	//Store record of users and products
