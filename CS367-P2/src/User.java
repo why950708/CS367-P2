@@ -64,7 +64,14 @@ public class User {
      * @return the product on success, null if no such product found
      */
 	public Product removeFromWishList(String productName){
+		ListADT<Product> curr=wishList;
+		int pos;
+		//travese throught the whole list
+		while(curr.getData!=null)
+	{
+			
 		
+		}	
 	}
 	
 	/**
