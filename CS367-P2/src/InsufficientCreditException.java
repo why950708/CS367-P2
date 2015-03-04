@@ -3,12 +3,9 @@ public class InsufficientCreditException extends Exception {
 	private static String message = null;
 	
 	/**		constructor			**/
-	public InsufficientCreditException( String message){
-		super(message);
-		this.message = message;
-	}
 	public InsufficientCreditException(){
 		super();
+		message = "User does not have enough credits";
 	}
 	
 	/**		getter methods		**/
