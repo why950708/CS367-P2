@@ -52,8 +52,12 @@ public class User {
      * @param product the Product to add
      */
 	public void addToWishList(Product product){
-		//add to the wishlsit.
-	this.wishlist.add(Product);
+	
+		//Use binary search to find the position to add the product.
+		
+	
+	
+	
 	
 	}
 	

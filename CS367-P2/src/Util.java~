@@ -2,8 +2,11 @@
 public class Util {
 
 	public Util() {
-		public int BinarySearchForProductName()
-		{}
+		public int BinarySearchForPrice()
+		{
+				
+
+		}
 	}
 
 }
