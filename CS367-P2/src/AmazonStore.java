@@ -97,8 +97,11 @@ public class AmazonStore {
 		// search the user list
 		for(int i = 0; i < users.size(); i++) {
 			// return the user if there is a match
-			if(users.get(i).checkLogin(username, passwd) == true)
+			if(users.get(i).checkLogin(username, passwd) == true) {
+				// update the current user
+				currentUser = users.get(i);
 				return users.get(i);
+			}
 		}
 		return null;
 	}
