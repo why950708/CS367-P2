@@ -53,19 +53,19 @@ public class User {
      */
 	public void addToWishList(Product product){
 	//create a current position buffer and traverse through a list
-	Listnode<Product> curr=wishList;
-	//Traverse through the wishlist find the position
+
+	//Traverse through the wishList find the position
 	int pos=0;
-		while(curr!=null)
+	boolean control=true;
+		while(control!=false)
 		{
-			if(curr.getData().getPrice()<product.getPrice())
+			if(pos<wishList.size()&&wishList.get(pos).getPrice()<product.getPrice())
 			{
-				curr=curr.getNext();
 			pos++;
 			}
-			if(curr.getData().getPrice()>=product.getPrice())
+			else
 			{
-				curr=null;
+				control=false;
 			}		
 			
 	
@@ -85,23 +85,24 @@ public class User {
      * @return the product on success, null if no such product found
      */
 	public Product removeFromWishList(String productName){
-		ListADT<Product> curr=wishList;
+		boolean ctrl=true;
 		int pos=0;
 		//travese throught the whole list
-		while(curr!=null)
+		while(ctrl!=false)
 	{
-		if(!curr.getData().getName().equals(productName))		
+		if(pos<wishList.size()&&!wishList.get(pos).getName().equals(productName))		
 		{
-			curr=curr.getNext();
 			pos++;
 		}
 		else
 		{
-			curr=null;
-			
+			ctrl=false;
 		}
+	}
+		if(pos==wishList.size())
+			return null;
 		return wishList.remove(pos);
-		}	
+			
 	}
 	
 	/**
@@ -111,8 +112,7 @@ public class User {
 	public void printWishList(PrintStream printStream){
 		ListADT<Product> curr=wishList;
 		for(int i=0;i<wishList.size();i++)
-		{printStream.print(curr.getData())
-			curr=curr.getNext();
+		{printStream.print(wishList.get(i));}
 	
 		}
 	
@@ -129,25 +129,24 @@ public class User {
 	public boolean buy(String productName) throws InsufficientCreditException{
 		//find the price of the product with specified productName
 		boolean returnValue=false;	
-		ListADT<Product> curr=wishList;
+		boolean ctrl=true;
 		int pos=0;
 		//travese throught the whole list
-		while(curr!=null)
-	{
-		if(!curr.getData().getName().equals(productName))		
+		while(ctrl!=false)
 		{
-			curr=curr.getNext();
-			pos++;
+			if(pos<wishList.size()&&!wishList.get(pos).getName().equals(productName))		
+			{
+				pos++;
+			}
+			else
+			{
+				ctrl=false;
+			}
 		}
-		else
-		{
-			curr=null;
-			
-		}
-		curr=wishList.get(pos);
-		
+	if(pos==wishList.size())
+		return false;
 		//compare the price with the credit
-		if(curr.getData().getPrice()>this.credit())
+		if(wishList.get(pos).getPrice()>this.credit)
 		{
 			throw new InsufficientCreditException();
 
@@ -155,14 +154,15 @@ public class User {
 
 	//charge the user according to the price of the product, remove the product from the wishlist
 		else{
-			credit=credit-curr.getData().getPrice();
+			credit=credit-wishList.get(pos).getPrice();
 			removeFromWishList(productName);
 			returnValue=true;	
 		}	
-	}	
+		
 
 		return false;
-	}
+	
+}
 	
 	/** 
      * Returns the credit of the user
