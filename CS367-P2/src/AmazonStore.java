@@ -249,24 +249,31 @@ public class AmazonStore {
 				}
 				switch(commands[0].charAt(0)){
 				case 'v':
+					commandV(commands);
 					break;
 
 				case 's':
+					commandS(commands);
 					break;
 
 				case 'a':
+					commandA(commands);
 					break;
 
 				case 'r':
+					commandR(commands);
 					break;
 
 				case 'b':
+					commandB();
 					break;
 
 				case 'c':
+					commandC();
 					break;
 
 				case 'l':
+					commandL();
 					done = true;
 					System.out.println("Logged Out");
 					break;
@@ -278,6 +285,7 @@ public class AmazonStore {
 			}
 		}
 	}
+	
 	/**
 	 *  display the price, rating, name of the product
 	 */
@@ -286,4 +294,21 @@ public class AmazonStore {
 				+ product.getPrice() + " Rating:" + product.getRating() + "starts");
 				
 	}
+	
+	static void commandV(String[] para)
+	{}
+	
+	static void commandS(String[] para)
+	{}
+	static void commandA(String[] para)
+	{}
+	static void commandR(String[] para)
+	{}
+	static void commandB()
+	{}
+	static void commandC()
+	{}
+	static void commandL()
+	{}
+	
 }
