@@ -94,6 +94,12 @@ public class AmazonStore {
 	 * @returns the currentUser 
 	 */
 	public static User login(String username, String passwd){
+		// search the user list
+		for(int i = 0; i < users.size(); i++) {
+			// return the user if there is a match
+			if(users.get(i).checkLogin(username, passwd) == true)
+				return users.get(i);
+		}
 		return null;
 	}
 
@@ -140,8 +146,12 @@ public class AmazonStore {
 		// add the user to the user list
 		users.add(newUser);
 		// read user wish list
+		for(int i = 0; i < products.size(); i++) {
+			// add them to the wish  list
+			if(scanUser.nextLine().equals(products.get(i).getName()))
+				newUser.addToWishList(products.get(i));
+		}
 		
-		// add them to the wish  list
 		
 	}
 
@@ -161,6 +171,57 @@ public class AmazonStore {
      * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
      */
 	public static void printByCategory(){
+		for(int i = 0 ; i < products.size(); i++) {
+			System.out.println("Laptops");
+			try {
+				// display products info in the same category
+				// cause index out of bounds exception when i is the last product
+				if (products.get(i).getCategory()
+						.equals(products.get(i + 1).getCategory())) 
+					displayProductsInfo(products.get(i));
+				
+				// display another category
+				else {
+					// display the last same category product
+					displayProductsInfo(products.get(i));
+					
+					switch (products.get(i + 1).getCategory()) {
+					case "Tablets": {
+						System.out.println("Tablets");
+						break;
+					}
+					case "Consoles": {
+						System.out.println("Consoles");
+						break;
+					}
+					case "Phones": {
+						System.out.println("Phones");
+						break;
+					}
+					case "Watches": {
+						System.out.println("Watches");
+						break;
+					}
+					case "Trackers": {
+						System.out.println("Trackers");
+						break;
+					}
+					case "Computers": {
+						System.out.println("Computers");
+						break;
+					}
+					default: {
+
+						break;
+					}
+					}
+				}
+			}
+			// print out the last product
+			catch (IndexOutOfBoundsException ex) {
+				displayProductsInfo(products.get(i));
+			}
+		}
 	}
 
 	
@@ -217,5 +278,12 @@ public class AmazonStore {
 			}
 		}
 	}
-
+	/**
+	 *  display the price, rating, name of the product
+	 */
+	private static void displayProductsInfo(Product product) {
+		System.out.println( product.getName() + "[Price:$" 
+				+ product.getPrice() + " Rating:" + product.getRating() + "starts");
+				
+	}
 }
