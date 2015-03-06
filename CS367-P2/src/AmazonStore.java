@@ -94,13 +94,19 @@ public class AmazonStore {
 	 * @returns the currentUser 
 	 */
 	public static User login(String username, String passwd){
-		// search the user list
-		for(int i = 0; i < users.size(); i++) {
-			// return the user if there is a match
-			if(users.get(i).checkLogin(username, passwd) == true)
-				return users.get(i);
+		if (currentUser == null) {
+			System.out.println("There is already a user logging in");
+			return null;
+		} else {
+			// search the user list
+			for (int i = 0; i < users.size(); i++) {
+				// return the user if there is a match
+				if (users.get(i).checkLogin(username, passwd) == true)
+					return users.get(i);
+			}
 		}
-		return null;
+		return null; // return null if there is not a match in the user list
+		
 	}
 
 	/**
@@ -249,24 +255,31 @@ public class AmazonStore {
 				}
 				switch(commands[0].charAt(0)){
 				case 'v':
+					commandV(commands);
 					break;
 
 				case 's':
+					commandS(commands);
 					break;
 
 				case 'a':
+					commandA(commands);
 					break;
 
 				case 'r':
+					commandR(commands);
 					break;
 
 				case 'b':
+					commandB();
 					break;
 
 				case 'c':
+					commandC();
 					break;
 
 				case 'l':
+					commandL();
 					done = true;
 					System.out.println("Logged Out");
 					break;
@@ -278,6 +291,7 @@ public class AmazonStore {
 			}
 		}
 	}
+	
 	/**
 	 *  display the price, rating, name of the product
 	 */
@@ -286,4 +300,52 @@ public class AmazonStore {
 				+ product.getPrice() + " Rating:" + product.getRating() + "starts");
 				
 	}
+	
+	static void commandV(String[] para)
+	{
+		
+		
+	}
+	
+	static void commandS(String[] para)
+	{
+	 // search the product list
+		for(int i = 0; i < products.size(); i++ ){
+			// if there is a match, print out the product info
+			if(para[1].equals(products.get(i).getName()))
+				displayProductsInfo(products.get(i));
+		}
+	
+		
+		
+	}
+	static void commandA(String[] para)
+	{
+		// search the product list
+		for(int i = 0; i < products.size(); i++){
+			// add this product to the user's wish list
+			if(para[1].equals(products.get(i).getName()))
+				currentUser.addToWishList(products.get(i));
+		}
+		// display error message if there is not a match
+		System.out.println("Product not found");
+		
+		
+		
+	
+		
+	}
+	static void commandR(String[] para)
+	{}
+	static void commandB()
+	{}
+	static void commandC()
+	{
+		System.out.println("$"+ currentUser.getCredit());
+	}
+	static void commandL()
+	{
+		currentUser = null;
+	}
+	
 }
