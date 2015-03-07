@@ -123,10 +123,10 @@ public class AmazonStore {
 		// read these files
 		while(scanProducts.hasNextLine()) {
 			String [] productInfo = scanProducts.nextLine().split("#");
-		
-		// create product objects
+
+			// create product objects
 			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Integer.parseInt(productInfo[3]));
-		// add them to product list
+			// add them to product list
 			products.add(myproduct);
 		}
 	}
@@ -154,25 +154,25 @@ public class AmazonStore {
 			if(scanUser.nextLine().equals(products.get(i).getName()))
 				newUser.addToWishList(products.get(i));
 		}
-		
-		
+
+
 	}
 
 	/**
 	 * See sample outputs
-     * Prints the entire store inventory formatted by category
-     * The input text file for products is already grouped by category, use the same order as given in the text file 
-     * format:
-     * <CATEGORY1>
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     * ...
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     * 
-     * <CATEGORY2>
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     * ...
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     */
+	 * Prints the entire store inventory formatted by category
+	 * The input text file for products is already grouped by category, use the same order as given in the text file 
+	 * format:
+	 * <CATEGORY1>
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 * ...
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 * 
+	 * <CATEGORY2>
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 * ...
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 */
 	public static void printByCategory(){
 		for(int i = 0 ; i < products.size(); i++) {
 			System.out.println("Laptops");
@@ -182,41 +182,41 @@ public class AmazonStore {
 				if (products.get(i).getCategory()
 						.equals(products.get(i + 1).getCategory())) 
 					displayProductsInfo(products.get(i));
-				
+
 				// display another category
 				else {
 					// display the last same category product
 					displayProductsInfo(products.get(i));
-					
-					switch (products.get(i + 1).getCategory()) {
-					case "Tablets": {
-						System.out.println("Tablets");
-						break;
-					}
-					case "Consoles": {
-						System.out.println("Consoles");
-						break;
-					}
-					case "Phones": {
-						System.out.println("Phones");
-						break;
-					}
-					case "Watches": {
-						System.out.println("Watches");
-						break;
-					}
-					case "Trackers": {
-						System.out.println("Trackers");
-						break;
-					}
-					case "Computers": {
-						System.out.println("Computers");
-						break;
-					}
-					default: {
 
-						break;
-					}
+					switch (products.get(i + 1).getCategory()) {
+						case "Tablets": {
+									System.out.println("Tablets");
+									break;
+						}
+						case "Consoles": {
+									 System.out.println("Consoles");
+									 break;
+						}
+						case "Phones": {
+								       System.out.println("Phones");
+								       break;
+						}
+						case "Watches": {
+									System.out.println("Watches");
+									break;
+						}
+						case "Trackers": {
+									 System.out.println("Trackers");
+									 break;
+						}
+						case "Computers": {
+									  System.out.println("Computers");
+									  break;
+						}
+						default: {
+
+								 break;
+						}
 					}
 				}
 			}
@@ -227,7 +227,7 @@ public class AmazonStore {
 		}
 	}
 
-	
+
 	/**
 	 * Interacts with the user by processing commands
 	 * 
@@ -251,67 +251,102 @@ public class AmazonStore {
 					continue;
 				}
 				switch(commands[0].charAt(0)){
-				case 'v':
-					commandV(commands);
-					break;
+					case 'v':
+						commandV(commands);
+						break;
 
-				case 's':
-					commandS(commands);
-					break;
+					case 's':
+						commandS(commands);
+						break;
 
-				case 'a':
-					commandA(commands);
-					break;
+					case 'a':
+						commandA(commands);
+						break;
 
-				case 'r':
-					commandR(commands);
-					break;
+					case 'r':
+						commandR(commands);
+						break;
 
-				case 'b':
-					commandB();
-					break;
+					case 'b':
+						commandB();
+						break;
 
-				case 'c':
-					commandC();
-					break;
+					case 'c':
+						commandC();
+						break;
 
-				case 'l':
-					commandL();
-					done = true;
-					System.out.println("Logged Out");
-					break;
+					case 'l':
+						commandL(done);
 
-				default:  //a command with no argument
-					System.out.println("Invalid Command");
-					break;
+						break;
+
+					default:  //a command with no argument
+						System.out.println("Invalid Command");
+						break;
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 *  display the price, rating, name of the product
 	 */
 	private static void displayProductsInfo(Product product) {
 		System.out.println( product.getName() + "[Price:$" 
 				+ product.getPrice() + " Rating:" + product.getRating() + "starts");
-				
+
+	}
+
+	static void commandV(String[] para)
+	{//when command is all
+
+		if(para[1].equals("all"))
+		{printByCategory();
+	return;
+		}
+		//when command is wishlist
+		if(para[1].equals("wishlist"))	
+		{
+			currentUser.printWishList();
+			return;}
+		//when command is instock
+		if(para[1].equals("instock"))
+		{
+			ListADT<Product> buf=null;
+			buf=currentUser.generateStock();
+			for(int i=0;i<buf.size();i++)
+				System.out.println(buf.get(i).getName());		
+
+			}		
+			return;
+		//when command is other stuff set the output Invalid Command
+		System.out.println("Invalid Command");
+
+		
 	}
 	
-	static void commandV(String[] para)
-	{}
-	
 	static void commandS(String[] para)
-	{}
+	{
+		
+
+	}
 	static void commandA(String[] para)
-	{}
+	{
+		
+
+
+	}
 	static void commandR(String[] para)
 	{}
 	static void commandB()
 	{}
 	static void commandC()
 	{}
-	static void commandL()
-	{}
-	
+	static void commandL(boolean done)
+	{
+		done = true;
+		System.out.println("Logged Out");
+		
+	}
+
 }
