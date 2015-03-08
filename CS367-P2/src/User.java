@@ -48,7 +48,7 @@ public class User {
 	 */
 	public boolean checkLogin(String username, String passwd) {
 		// check username and passwd
-		if (username == this.username && passwd == this.passwd)
+		if (username.equals( this.username) && passwd.equals(this.passwd))
 			return true;
 		return false;
 
@@ -77,7 +77,7 @@ public class User {
 
 		}
 
-		wishList.add(pos - 1, product);
+		wishList.add(pos, product);
 
 	}
 
@@ -115,7 +115,6 @@ public class User {
 	 *            The printstream object on which to print out the wishlist
 	 */
 	public void printWishList(PrintStream printStream) {
-		ListADT<Product> curr = wishList;
 		for (int i = 0; i < wishList.size(); i++) {
 			printStream.print(wishList.get(i));
 		}

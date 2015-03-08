@@ -1,6 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-import java.io.File;
-import java.io.FileNotFoundException;
+
 //                   ALL STUDENTS COMPLETE THESE SECTIONS
 // Title:            (P2)
 // Files:            (DLinkedList.java, InsufficientCreditException.java, ListADT.java, Listnode.java, User.java, Products.java)
@@ -30,7 +29,8 @@ import java.io.FileNotFoundException;
 // Lab Section:      (your partner's lab section number)
 //
 import java.util.Scanner;
-
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class AmazonStore {
 
@@ -123,9 +123,10 @@ public class AmazonStore {
 		// read these files
 		while(scanProducts.hasNextLine()) {
 			String [] productInfo = scanProducts.nextLine().split("#");
-
+			System.out.println(productInfo[0]);
 			// create product objects
 			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Float.parseFloat(productInfo[3]));
+			//System.out.println(myproduct.getName());
 			// add them to product list
 			products.add(myproduct);
 		}
@@ -149,13 +150,22 @@ public class AmazonStore {
 		// add the user to the user list
 		users.add(newUser);
 		// read user wish list
+		while(scanUser.hasNextLine()){
+			String buf=scanUser.nextLine();
+			
+			
+			//delete after
+			for(int i=0;i<products.size();i++)
+				System.out.println(products.get(i).getName());
+			//
 		for(int i = 0; i <products.size(); i++) {
 			// add them to the wish list
-			if(scanUser.nextLine().equals(products.get(i).getName()))
+			
+				if(buf.equals(products.get(i).getName()))
 				newUser.addToWishList(products.get(i));
 		}
 
-
+		}
 	}
 
 	/**
