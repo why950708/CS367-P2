@@ -28,7 +28,7 @@ public class DLinkedList<E> implements ListADT<E>{
 	/**
 	 * add the new item to the tail
 	 * @param new item to be added
-	 * @throws IllegalArgumentException if the new tiem is null
+	 * @throws IllegalArgumentException if the new item is null
 	 */
 	public void add(E item) {
 		// check whether the item is null
@@ -145,9 +145,6 @@ public class DLinkedList<E> implements ListADT<E>{
 	 * @throws IndexOutOfBoundsException if pos is less than 0 or greater than
 	 * or equal to size()
 	 */
-	 // 今晚上接着写 
-	// PS： 我觉得就在这上面修改也行啊 大家都收的到通知
-	//也行。。。。。
 	public E remove(int pos) {
 		if(pos < 0 || pos >= numItems)	throw new IndexOutOfBoundsException();
 		Listnode<E> curr = head;

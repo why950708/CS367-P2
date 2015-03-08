@@ -29,7 +29,7 @@ public class User {
 		//assign the credit value
 		this.credit=credit;
 		//Initilization of the wishlist
-		this.wishlist=new DLinkedList();
+		this.wishList=new DLinkedList();
 	}
 	
 	/**
@@ -53,7 +53,7 @@ public class User {
      */
 	public void addToWishList(Product product){
 		//add to the wishlsit.
-	this.wishlist.add(Product);
+	this.wishList.add(product);
 	
 	}
 	

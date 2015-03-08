@@ -336,7 +336,9 @@ public class AmazonStore {
 		//
 	}
 	static void commandR(String[] para)
-	{}
+	{
+		 
+	}
 	static void commandB()
 	{}
 	static void commandC()
