@@ -307,7 +307,7 @@ public class AmazonStore {
 		//when command is wishlist
 		if(para[1].equals("wishlist"))	
 		{
-			currentUser.printWishList();
+			currentUser.printWishList(System.out);
 			return;}
 		//when command is instock
 		if(para[1].equals("instock"))
@@ -316,9 +316,9 @@ public class AmazonStore {
 			buf=currentUser.generateStock();
 			for(int i=0;i<buf.size();i++)
 				System.out.println(buf.get(i).getName());		
-
-			}		
 			return;
+			}		
+		
 		//when command is other stuff set the output Invalid Command
 		System.out.println("Invalid Command");
 
