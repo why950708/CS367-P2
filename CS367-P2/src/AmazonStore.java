@@ -1,6 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-import java.io.File;
-import java.io.FileNotFoundException;
+
 //                   ALL STUDENTS COMPLETE THESE SECTIONS
 // Title:            (P2)
 // Files:            (DLinkedList.java, InsufficientCreditException.java, ListADT.java, Listnode.java, User.java, Products.java)
@@ -30,7 +29,8 @@ import java.io.FileNotFoundException;
 // Lab Section:      (your partner's lab section number)
 //
 import java.util.Scanner;
-
+import java.io.File;
+import java.io.FileNotFoundException;
 
 public class AmazonStore {
 
@@ -94,19 +94,16 @@ public class AmazonStore {
 	 * @returns the currentUser 
 	 */
 	public static User login(String username, String passwd){
-		if (currentUser == null) {
-			System.out.println("There is already a user logging in");
-			return null;
-		} else {
-			// search the user list
-			for (int i = 0; i < users.size(); i++) {
-				// return the user if there is a match
-				if (users.get(i).checkLogin(username, passwd) == true)
-					return users.get(i);
+		// search the user list
+		for(int i = 0; i < users.size(); i++) {
+			// return the user if there is a match
+			if(users.get(i).checkLogin(username, passwd) == true) {
+				// update the current user
+				currentUser = users.get(i);
+				return users.get(i);
 			}
 		}
-		return null; // return null if there is not a match in the user list
-		
+		return null;
 	}
 
 	/**
@@ -126,10 +123,11 @@ public class AmazonStore {
 		// read these files
 		while(scanProducts.hasNextLine()) {
 			String [] productInfo = scanProducts.nextLine().split("#");
-		
-		// create product objects
-			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Integer.parseInt(productInfo[3]));
-		// add them to product list
+			System.out.println(productInfo[0]);
+			// create product objects
+			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Float.parseFloat(productInfo[3]));
+			//System.out.println(myproduct.getName());
+			// add them to product list
 			products.add(myproduct);
 		}
 	}
@@ -152,30 +150,39 @@ public class AmazonStore {
 		// add the user to the user list
 		users.add(newUser);
 		// read user wish list
-		for(int i = 0; i < products.size(); i++) {
-			// add them to the wish  list
-			if(scanUser.nextLine().equals(products.get(i).getName()))
+		while(scanUser.hasNextLine()){
+			String buf=scanUser.nextLine();
+			
+			
+			//delete after
+			for(int i=0;i<products.size();i++)
+				System.out.println(products.get(i).getName());
+			//
+		for(int i = 0; i <products.size(); i++) {
+			// add them to the wish list
+			
+				if(buf.equals(products.get(i).getName()))
 				newUser.addToWishList(products.get(i));
 		}
-		
-		
+
+		}
 	}
 
 	/**
 	 * See sample outputs
-     * Prints the entire store inventory formatted by category
-     * The input text file for products is already grouped by category, use the same order as given in the text file 
-     * format:
-     * <CATEGORY1>
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     * ...
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     * 
-     * <CATEGORY2>
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     * ...
-     * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
-     */
+	 * Prints the entire store inventory formatted by category
+	 * The input text file for products is already grouped by category, use the same order as given in the text file 
+	 * format:
+	 * <CATEGORY1>
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 * ...
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 * 
+	 * <CATEGORY2>
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 * ...
+	 * <NAME> [Price:$<PRICE> Rating:<RATING> stars]
+	 */
 	public static void printByCategory(){
 		for(int i = 0 ; i < products.size(); i++) {
 			System.out.println("Laptops");
@@ -185,41 +192,41 @@ public class AmazonStore {
 				if (products.get(i).getCategory()
 						.equals(products.get(i + 1).getCategory())) 
 					displayProductsInfo(products.get(i));
-				
+
 				// display another category
 				else {
 					// display the last same category product
 					displayProductsInfo(products.get(i));
-					
-					switch (products.get(i + 1).getCategory()) {
-					case "Tablets": {
-						System.out.println("Tablets");
-						break;
-					}
-					case "Consoles": {
-						System.out.println("Consoles");
-						break;
-					}
-					case "Phones": {
-						System.out.println("Phones");
-						break;
-					}
-					case "Watches": {
-						System.out.println("Watches");
-						break;
-					}
-					case "Trackers": {
-						System.out.println("Trackers");
-						break;
-					}
-					case "Computers": {
-						System.out.println("Computers");
-						break;
-					}
-					default: {
 
-						break;
-					}
+					switch (products.get(i + 1).getCategory()) {
+						case "Tablets": {
+									System.out.println("Tablets");
+									break;
+						}
+						case "Consoles": {
+									 System.out.println("Consoles");
+									 break;
+						}
+						case "Phones": {
+								       System.out.println("Phones");
+								       break;
+						}
+						case "Watches": {
+									System.out.println("Watches");
+									break;
+						}
+						case "Trackers": {
+									 System.out.println("Trackers");
+									 break;
+						}
+						case "Computers": {
+									  System.out.println("Computers");
+									  break;
+						}
+						default: {
+
+								 break;
+						}
 					}
 				}
 			}
@@ -230,7 +237,7 @@ public class AmazonStore {
 		}
 	}
 
-	
+
 	/**
 	 * Interacts with the user by processing commands
 	 * 
@@ -254,70 +261,89 @@ public class AmazonStore {
 					continue;
 				}
 				switch(commands[0].charAt(0)){
-				case 'v':
-					commandV(commands);
-					break;
+					case 'v':
+						commandV(commands);
+						break;
 
-				case 's':
-					commandS(commands);
-					break;
+					case 's':
+						commandS(commands);
+						break;
 
-				case 'a':
-					commandA(commands);
-					break;
+					case 'a':
+						commandA(commands);
+						break;
 
-				case 'r':
-					commandR(commands);
-					break;
+					case 'r':
+						commandR(commands);
+						break;
 
-				case 'b':
-					commandB();
-					break;
+					case 'b':
+						commandB();
+						break;
 
-				case 'c':
-					commandC();
-					break;
+					case 'c':
+						commandC();
+						break;
 
-				case 'l':
-					commandL();
-					done = true;
-					System.out.println("Logged Out");
-					break;
+					case 'l':
+						commandL(done);
 
-				default:  //a command with no argument
-					System.out.println("Invalid Command");
-					break;
+						break;
+
+					default:  //a command with no argument
+						System.out.println("Invalid Command");
+						break;
 				}
 			}
 		}
 	}
-	
+
 	/**
 	 *  display the price, rating, name of the product
 	 */
 	private static void displayProductsInfo(Product product) {
 		System.out.println( product.getName() + "[Price:$" 
 				+ product.getPrice() + " Rating:" + product.getRating() + "starts");
-				
+
 	}
-	
+
 	static void commandV(String[] para)
-	{
+	{//when command is all
+
+		if(para[1].equals("all"))
+		{printByCategory();
+	return;
+		}
+		//when command is wishlist
+		if(para[1].equals("wishlist"))	
+		{
+			currentUser.printWishList(System.out);
+			return;}
+		//when command is instock
+		if(para[1].equals("instock"))
+		{
+			ListADT<Product> buf=null;
+			buf=currentUser.generateStock();
+			for(int i=0;i<buf.size();i++)
+				System.out.println(buf.get(i).getName());		
+			return;
+			}		
 		
+		//when command is other stuff set the output Invalid Command
+		System.out.println("Invalid Command");
+
 		
 	}
 	
 	static void commandS(String[] para)
 	{
-	 // search the product list
+		// search the product list
 		for(int i = 0; i < products.size(); i++ ){
 			// if there is a match, print out the product info
 			if(para[1].equals(products.get(i).getName()))
 				displayProductsInfo(products.get(i));
-		}
-	
-		
-		
+
+	}
 	}
 	static void commandA(String[] para)
 	{
@@ -329,25 +355,26 @@ public class AmazonStore {
 		}
 		// display error message if there is not a match
 		System.out.println("Product not found");
-		
-		
-		
-	
-		//
 	}
 	static void commandR(String[] para)
-	{
-		 
-	}
+	{}
 	static void commandB()
 	{}
 	static void commandC()
-	{
-		System.out.println("$"+ currentUser.getCredit());
-	}
+
+	{System.out.println("$"+ currentUser.getCredit());}
 	static void commandL()
-	{
-		currentUser = null;
-	}
+	{currentUser = null;}
 	
+	
+	static void commandL(boolean done)
+	{
+		done = true;
+		System.out.println("Logged Out");
+		
+	}
+
+
+	
+
 }
