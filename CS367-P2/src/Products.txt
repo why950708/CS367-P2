@@ -1,0 +1,26 @@
+Apple Macbook Air#Laptops#854#4.5
+Lenovo ThinkPad#Laptops#364#4.5
+Google Chromebook#Laptops#299#4
+HP Pavilion#Laptops#600#1
+Apple iPad Air 2#Tablets#599#4.5
+Microsoft Surface Pro 3#Tablets#799#4.5
+Microsoft Xbox One#Consoles#349#3.5
+Sony PS4#Consoles#399#3.5
+Nintendo Wii U#Consoles#299#4
+Nintendo Entertainment System#Consoles#90#5
+Sega Genesis#Consoles#40#5
+Apple iPhone 6#Phones#719#4.5
+Google Nexus 6#Phones#649#4.5
+Motorola Moto X#Phones#550#4
+Nokia 3310#Phones#20#5
+Apple Watch#"Smart" Watches#350#3.5
+Motorola Moto 360#"Smart" Watches#250#4
+Samsung Gear Live#"Smart" Watches#150#3
+Casio G-Shock#"Smart" Watches#50#5
+Occulus Rift#Fancy Face Computers#400#4.5
+Google Glass#Fancy Face Computers#1500#4
+Microsoft HoloLens#Fancy Face Computers#1000#4
+Samsung Gear VR#Fancy Face Computers#200#3.5
+FitBit#Fitness Trackers#100#4
+Apple iBand#Fitness Trackers#250#4
+Samsung Gear Fit#Fitness Trackers#150#3.5
