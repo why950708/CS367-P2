@@ -1,0 +1,79 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AmazonStore	.\AmazonStore.java	/^public class AmazonStore {$/;"	c
+DLinkedList	.\DLinkedList.java	/^	public DLinkedList(){$/;"	m	class:DLinkedList
+DLinkedList	.\DLinkedList.java	/^public class DLinkedList<E> implements ListADT<E>{$/;"	c
+InsufficientCreditException	.\InsufficientCreditException.java	/^	public InsufficientCreditException(){$/;"	m	class:InsufficientCreditException
+InsufficientCreditException	.\InsufficientCreditException.java	/^public class InsufficientCreditException extends Exception {$/;"	c
+ListADT	.\ListADT.java	/^public interface ListADT<E> {$/;"	i
+Listnode	.\Listnode.java	/^	Listnode(E data) {$/;"	m	class:Listnode
+Listnode	.\Listnode.java	/^	Listnode(E data, Listnode<E> next, Listnode<E> prev) {$/;"	m	class:Listnode
+Listnode	.\Listnode.java	/^class Listnode<E> {$/;"	c
+Product	.\Product.java	/^	public Product(String name, String category, int price, float rating){$/;"	m	class:Product
+Product	.\Product.java	/^public class Product {$/;"	c
+User	.\User.java	/^	public User(String username, String passwd, int credit){$/;"	m	class:User
+User	.\User.java	/^public class User {$/;"	c
+add	.\DLinkedList.java	/^	public void add(E item) {$/;"	m	class:DLinkedList
+add	.\DLinkedList.java	/^	public void add(int pos, E item) {$/;"	m	class:DLinkedList
+add	.\ListADT.java	/^	void add(E item);$/;"	m	interface:ListADT
+add	.\ListADT.java	/^	void add(int pos, E item);$/;"	m	interface:ListADT
+addToWishList	.\User.java	/^	public void addToWishList(Product product){$/;"	m	class:User
+buy	.\User.java	/^	public boolean buy(String productName) throws InsufficientCreditException{$/;"	m	class:User
+category	.\Product.java	/^	private String category;$/;"	f	class:Product	file:
+checkLogin	.\User.java	/^	public boolean checkLogin(String username, String passwd){$/;"	m	class:User
+contains	.\DLinkedList.java	/^	public boolean contains(E item) {$/;"	m	class:DLinkedList
+contains	.\ListADT.java	/^	boolean contains(E item);$/;"	m	interface:ListADT
+credit	.\User.java	/^	private int credit;$/;"	f	class:User	file:
+currentUser	.\AmazonStore.java	/^	private static User currentUser = null;\/\/current user logged in$/;"	f	class:AmazonStore	file:
+data	.\Listnode.java	/^	private E data;                \/\/ data to be stored $/;"	f	class:Listnode	file:
+displayProductsInfo	.\AmazonStore.java	/^	private static void displayProductsInfo(Product product) {$/;"	m	class:AmazonStore	file:
+generateStock	.\User.java	/^	public ListADT<Product> generateStock() {$/;"	m	class:User
+get	.\DLinkedList.java	/^	public E get(int pos) {$/;"	m	class:DLinkedList
+get	.\ListADT.java	/^	E get(int pos);$/;"	m	interface:ListADT
+getCategory	.\Product.java	/^	public String getCategory(){$/;"	m	class:Product
+getCredit	.\User.java	/^	public int getCredit(){$/;"	m	class:User
+getData	.\Listnode.java	/^	E getData() {$/;"	m	class:Listnode
+getMessage	.\InsufficientCreditException.java	/^	public String getMessage(){$/;"	m	class:InsufficientCreditException
+getName	.\Product.java	/^	public String getName(){$/;"	m	class:Product
+getNext	.\Listnode.java	/^	Listnode<E> getNext() {$/;"	m	class:Listnode
+getPrev	.\Listnode.java	/^	Listnode<E> getPrev() {$/;"	m	class:Listnode
+getPrice	.\Product.java	/^	public int getPrice(){$/;"	m	class:Product
+getRating	.\Product.java	/^	public float getRating(){$/;"	m	class:Product
+head	.\DLinkedList.java	/^	private Listnode<E> head;$/;"	f	class:DLinkedList	file:
+isEmpty	.\DLinkedList.java	/^	public boolean isEmpty(){$/;"	m	class:DLinkedList
+isEmpty	.\ListADT.java	/^	boolean isEmpty();$/;"	m	interface:ListADT
+loadProducts	.\AmazonStore.java	/^	public static void loadProducts(String fileName) throws FileNotFoundException{$/;"	m	class:AmazonStore
+loadUser	.\AmazonStore.java	/^	public static void loadUser(String fileName) throws FileNotFoundException{$/;"	m	class:AmazonStore
+login	.\AmazonStore.java	/^	public static User login(String username, String passwd){$/;"	m	class:AmazonStore
+main	.\AmazonStore.java	/^	public static void main(String args[]) throws FileNotFoundException {$/;"	m	class:AmazonStore
+message	.\InsufficientCreditException.java	/^	private static String message = null;$/;"	f	class:InsufficientCreditException	file:
+name	.\Product.java	/^	private String name;$/;"	f	class:Product	file:
+next	.\Listnode.java	/^	private Listnode<E> next;   \/\/ connection to next node$/;"	f	class:Listnode	file:
+numItems	.\DLinkedList.java	/^	private int numItems;$/;"	f	class:DLinkedList	file:
+passwd	.\User.java	/^	private String passwd;$/;"	f	class:User	file:
+prev	.\Listnode.java	/^	private Listnode<E> prev;   \/\/ connection to previous node$/;"	f	class:Listnode	file:
+price	.\Product.java	/^	private int price;$/;"	f	class:Product	file:
+printByCategory	.\AmazonStore.java	/^	public static void printByCategory(){$/;"	m	class:AmazonStore
+printWishList	.\User.java	/^	public void printWishList(PrintStream printStream){$/;"	m	class:User
+products	.\AmazonStore.java	/^	private static ListADT<Product> products = new DLinkedList<Product>();$/;"	f	class:AmazonStore	file:
+randGen	.\User.java	/^	private static Random randGen = new Random(1234);$/;"	f	class:User	file:
+rating	.\Product.java	/^	private float rating;$/;"	f	class:Product	file:
+remove	.\DLinkedList.java	/^	public E remove(int pos) {$/;"	m	class:DLinkedList
+remove	.\ListADT.java	/^	E remove(int pos);$/;"	m	interface:ListADT
+removeFromWishList	.\User.java	/^	public Product removeFromWishList(String productName){$/;"	m	class:User
+setData	.\Listnode.java	/^	void setData(E data) {$/;"	m	class:Listnode
+setNext	.\Listnode.java	/^	void setNext(Listnode<E> next) {$/;"	m	class:Listnode
+setPrev	.\Listnode.java	/^	void setPrev(Listnode<E> prev) {$/;"	m	class:Listnode
+size	.\DLinkedList.java	/^	public int size(){$/;"	m	class:DLinkedList
+size	.\ListADT.java	/^	int size();$/;"	m	interface:ListADT
+stdin	.\AmazonStore.java	/^	public static final Scanner stdin= new Scanner(System.in);$/;"	f	class:AmazonStore
+tail	.\DLinkedList.java	/^	private Listnode<E> tail;$/;"	f	class:DLinkedList	file:
+toString	.\Product.java	/^	public String toString(){$/;"	m	class:Product
+userMenu	.\AmazonStore.java	/^	public static void userMenu(ListADT<Product> inStock){$/;"	m	class:AmazonStore
+username	.\User.java	/^	private String username;$/;"	f	class:User	file:
+users	.\AmazonStore.java	/^	private static ListADT<User> users = new DLinkedList<User>();$/;"	f	class:AmazonStore	file:
+wishList	.\User.java	/^	private ListADT<Product> wishList;$/;"	f	class:User	file:

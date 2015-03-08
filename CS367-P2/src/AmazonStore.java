@@ -327,26 +327,44 @@ public class AmazonStore {
 	
 	static void commandS(String[] para)
 	{
-		
+		// search the product list
+		for(int i = 0; i < products.size(); i++ ){
+			// if there is a match, print out the product info
+			if(para[1].equals(products.get(i).getName()))
+				displayProductsInfo(products.get(i));
 
+	}
 	}
 	static void commandA(String[] para)
 	{
-		
-
-
+		// search the product list
+		for(int i = 0; i < products.size(); i++){
+			// add this product to the user's wish list
+			if(para[1].equals(products.get(i).getName()))
+				currentUser.addToWishList(products.get(i));
+		}
+		// display error message if there is not a match
+		System.out.println("Product not found");
 	}
 	static void commandR(String[] para)
 	{}
 	static void commandB()
 	{}
 	static void commandC()
-	{}
+
+	{System.out.println("$"+ currentUser.getCredit());}
+	static void commandL()
+	{currentUser = null;}
+	
+	
 	static void commandL(boolean done)
 	{
 		done = true;
 		System.out.println("Logged Out");
 		
 	}
+
+
+	
 
 }
