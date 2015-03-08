@@ -125,7 +125,7 @@ public class AmazonStore {
 			String [] productInfo = scanProducts.nextLine().split("#");
 
 			// create product objects
-			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Integer.parseInt(productInfo[3]));
+			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Float.parseFloat(productInfo[3]));
 			// add them to product list
 			products.add(myproduct);
 		}
@@ -149,8 +149,8 @@ public class AmazonStore {
 		// add the user to the user list
 		users.add(newUser);
 		// read user wish list
-		for(int i = 0; i < products.size(); i++) {
-			// add them to the wish  list
+		for(int i = 0; i <products.size(); i++) {
+			// add them to the wish list
 			if(scanUser.nextLine().equals(products.get(i).getName()))
 				newUser.addToWishList(products.get(i));
 		}

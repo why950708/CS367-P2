@@ -40,7 +40,7 @@ public class DLinkedList<E> implements ListADT<E>{
 			Listnode<E> curr = head;
 			Listnode<E> newNode = new Listnode<E>(item);
 			// traverse the list node to the last one
-			for (int i = 0; i < numItems; i++)
+			for (int i = 0; i < numItems-1; i++)
 				curr = curr.getNext();
 			// add the new item at on the tail
 			curr.setNext(newNode);
@@ -145,9 +145,7 @@ public class DLinkedList<E> implements ListADT<E>{
 	 * @throws IndexOutOfBoundsException if pos is less than 0 or greater than
 	 * or equal to size()
 	 */
-	 // 今晚上接着写 
-	// PS： 我觉得就在这上面修改也行啊 大家都收的到通知
-	//也行。。。。。
+	
 	public E remove(int pos) {
 		if(pos < 0 || pos >= numItems)	throw new IndexOutOfBoundsException();
 		Listnode<E> curr = head;
