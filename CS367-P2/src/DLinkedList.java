@@ -51,7 +51,7 @@ public class DLinkedList<E> implements ListADT<E> {
 			curr.setNext(newNode);
 			tail = newNode;
 			// update the next and prev
-			tail.setNext(null);
+			//tail.setNext(null);
 			tail.setPrev(curr);
 		}
 		// increment the number of items in the list

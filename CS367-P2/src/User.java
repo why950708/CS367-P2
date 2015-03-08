@@ -70,6 +70,7 @@ public class User {
 		while (control != false) {
 			if (pos < wishList.size()
 					&& wishList.get(pos).getPrice() < product.getPrice()) {
+				System.out.println(wishList.get(pos));
 				pos++;
 			} else {
 				control = false;

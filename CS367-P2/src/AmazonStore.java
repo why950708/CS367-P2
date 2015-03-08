@@ -123,7 +123,6 @@ public class AmazonStore {
 		// read these files
 		while(scanProducts.hasNextLine()) {
 			String [] productInfo = scanProducts.nextLine().split("#");
-			System.out.println(productInfo[0]);
 			// create product objects
 			Product myproduct = new Product(productInfo[0], productInfo[1],Integer.parseInt(productInfo[2]), Float.parseFloat(productInfo[3]));
 			//System.out.println(myproduct.getName());
@@ -155,8 +154,8 @@ public class AmazonStore {
 			
 			
 			//delete after
-			for(int i=0;i<products.size();i++)
-				System.out.println(products.get(i).getName());
+			//for(int i=0;i<products.size();i++)
+				//System.out.println(products.get(i).getName());
 			//
 		for(int i = 0; i <products.size(); i++) {
 			// add them to the wish list
