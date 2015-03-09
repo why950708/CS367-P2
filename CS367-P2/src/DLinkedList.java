@@ -100,7 +100,7 @@ public class DLinkedList<E> implements ListADT<E> {
 			for (int i = 1; i < pos; i++)
 				curr = curr.getNext();
 			// update the next
-			newItem.setNext(curr.getNext().getNext());
+			newItem.setNext(curr.getNext());
 			curr.setNext(newItem);
 			// update the prev
 			newItem.setPrev(curr);
