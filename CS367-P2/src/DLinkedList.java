@@ -51,8 +51,8 @@ public class DLinkedList<E> implements ListADT<E> {
 			curr.setNext(newNode);
 			tail = newNode;
 			// update the next and prev
-			//tail.setNext(null);
-			tail.setPrev(curr);
+			// tail.setNext(null);
+			newNode.setPrev(curr);
 		}
 		// increment the number of items in the list
 		numItems++;
@@ -76,21 +76,22 @@ public class DLinkedList<E> implements ListADT<E> {
 			throw new IllegalArgumentException();
 		// if the item is added to the head
 		else if (pos == 0) {
-			if(numItems == 0) {
+			if (numItems == 0) {
 				head = new Listnode<E>(item);
-			}
-			else {
+			} else {
 				Listnode<E> newItem = new Listnode<E>(item);
 				newItem.setNext(head);
 				head.setPrev(newItem);
 				head = newItem;
 			}
-			
+
 		}
 		// if the item is added to the tail
-		else if (pos == numItems)
+		else if (pos == numItems) {
 			this.add(item);
-
+			// clear out the numItems++ inside add(item);
+			numItems--;
+		}
 		// general case
 		else {
 			Listnode<E> curr = head;
@@ -148,9 +149,9 @@ public class DLinkedList<E> implements ListADT<E> {
 		if (pos < 0 || pos >= numItems)
 			throw new IndexOutOfBoundsException();
 		// return the head if the pos is 0
-		if (pos == 0) 
+		if (pos == 0)
 			return head.getData();
-		
+
 		// general case
 		else {
 			Listnode<E> curr = head;
