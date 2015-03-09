@@ -265,7 +265,9 @@ public class AmazonStore {
 					break;
 
 				case 'l':
-					commandL(done);
+					done = true;
+					currentUser=null;
+					System.out.println("Logged Out");
 
 					break;
 
@@ -368,11 +370,5 @@ public class AmazonStore {
 
 	
 
-	static void commandL(boolean done) {
-		done = true;
-		currentUser=null;
-		System.out.println("Logged Out");
-
-	}
 
 }
