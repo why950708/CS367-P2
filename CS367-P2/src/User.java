@@ -193,8 +193,7 @@ public class User {
 
 		int n = randGen.nextInt(size + 1);// N items in stock where n>=0 and
 											// n<size
-		System.out.println(n);
-		System.out.println(wishList.size());
+		
 		// pick first n items from wishList
 		for (int ndx = 0; ndx < n; ndx++)
 			inStock.add(wishList.get(ndx));

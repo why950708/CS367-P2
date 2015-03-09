@@ -1,0 +1,65 @@
+Enter username : Roney
+Enter password : pikachu
+Enter option : v:wishlist
+Microsoft Surface Pro 3 [Price:$799 Rating:4.5 stars]
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : r:asd
+Product not found
+Enter option : a:asd
+Product not found
+Enter option : v:instock
+Microsoft Surface Pro 3 [Price:$799 Rating:4.5 stars]
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Enter option : a:Occulus Rift
+Added to wishlist
+Enter option : v:wishlist
+Microsoft Surface Pro 3 [Price:$799 Rating:4.5 stars]
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : b
+Bought Microsoft Surface Pro 3
+Bought Occulus Rift
+Enter option : v:wishlist
+Occulus Rift [Price:$400 Rating:4.5 stars]
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : b
+Bought Occulus Rift
+Enter option : v:wishlist
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : b
+Enter option : v:wishlist
+Nintendo Wii U [Price:$299 Rating:4.0 stars]
+Google Chromebook [Price:$299 Rating:4.0 stars]
+FitBit [Price:$100 Rating:4.0 stars]
+Casio G-Shock [Price:$50 Rating:5.0 stars]
+Sega Genesis [Price:$40 Rating:5.0 stars]
+Nokia 3310 [Price:$20 Rating:5.0 stars]
+Enter option : exit
+Invalid Command
+Enter option : l
+Logged Out
+Enter 'exit' to exit program or anything else to go back to login
+exit
+
