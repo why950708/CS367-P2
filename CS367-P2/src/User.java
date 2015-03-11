@@ -1,3 +1,14 @@
+///////////////////////////////////////////////////////////////////////////////
+//                   ALL STUDENTS COMPLETE THESE SECTIONS
+// Main Class File:  (AmazonStore.java)
+// File:             (DLinkedList.java)
+// Semester:         CS367 Spring 2015
+//
+// Author:           (Chenyuan Zhang)
+// CS Login:         (chenyuan)
+// Lecturer's Name:  (Jim)
+// Lab Section:      (your lab section number)
+//
 import java.util.Random;
 import java.io.PrintStream;
 
@@ -47,6 +58,8 @@ public class User {
 	 * @return true if credentials correct, false otherwise
 	 */
 	public boolean checkLogin(String username, String passwd) {
+		if(username==null||passwd==null)
+		{throw new IllegalArgumentException();}
 		// check username and passwd
 		if (username.equals( this.username) && passwd.equals(this.passwd))
 			return true;
@@ -62,6 +75,8 @@ public class User {
 	 *            the Product to add
 	 */
 	public void addToWishList(Product product) {
+		if(product==null)
+		{throw new IllegalArgumentException();}
 		// create a current position buffer and traverse through a list
 
 		// Traverse through the wishList find the position
@@ -91,6 +106,8 @@ public class User {
 	 * @return the product on success, null if no such product found
 	 */
 	public Product removeFromWishList(String productName) {
+		if(productName==null)
+		{throw new IllegalArgumentException();}
 		boolean ctrl = true;
 		int pos = 0;
 		// travese throught the whole list
@@ -116,6 +133,8 @@ public class User {
 	 *            The printstream object on which to print out the wishlist
 	 */
 	public void printWishList(PrintStream printStream) {
+		if(printStream==null)
+		{throw new IllegalArgumentException();}
 		for (int i = 0; i < wishList.size(); i++) {
 			printStream.println(wishList.get(i));
 		}
@@ -135,6 +154,10 @@ public class User {
 	 *             if price > credit
 	 */
 	public boolean buy(String productName) throws InsufficientCreditException {
+		if(productName==null)
+		{
+			throw new IllegalArgumentException();
+		}
 		// find the price of the product with specified productName
 		boolean returnValue = false;
 		boolean ctrl = true;

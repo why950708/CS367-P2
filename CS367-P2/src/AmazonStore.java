@@ -22,11 +22,11 @@
 //                      b. the other partner must join the team
 //                   4. complete this section for each program file.
 //
-// Pair Partner:     (name of your pair programming partner)
-// Email:            (email address of your programming partner)
-// CS Login:         (partner's login name)
-// Lecturer's Name:  (name of your partner's lecturer)
-// Lab Section:      (your partner's lab section number)
+// Pair Partner:     (Hongyi Wang)
+// Email:            (hongyi.wang@wisc.edi)
+// CS Login:         (hongyi)
+// Lecturer's Name:  (Jim)
+// Lab Section:      no
 //
 import java.util.Scanner;
 import java.io.File;
@@ -184,33 +184,40 @@ public class AmazonStore {
 	 * [Price:$<PRICE> Rating:<RATING> stars]
 	 */
 	public static void printByCategory() {
-
+		
 		// get all products categories
 		for (int i = 0; i < products.size(); i++)
-			category.add(products.get(i).getCategory());
-		// sort the category
-		for (int i = 0; i < category.size(); i++) {
-			for (int m = i + 1; m < category.size(); i++) {
-				if (category.get(i).equals(category.get(m)))
-					category.remove(m);
+			{boolean ctrl=true;
+			for(int j=0;j<category.size();j++)
+				
+			{if(category.get(j).equals(products.get(i).getCategory()))
+				ctrl=false;
 			}
-		}
+			if(ctrl==true)
+			{category.add(products.get(i).getCategory());}
+			}
+		
 		// print out products info according to categories
 		for (int i = 0; i < category.size(); i++) {
+			int productCategory = 1;// a variable to insure print out
+			if (productCategory == 1)
+				System.out.println(category.get(i).toString());
+			
 			for (int m = 0; m < products.size(); m++) {
-				int productCategory = 1;// a variable to insure print out
-										// category only once
+				// category only once
 				if (products.get(m).getCategory().equals(category.get(i))) {
-					if (productCategory == 1)
-						System.out.println(category.get(i).toString());
 					displayProductsInfo(products.get(m));
 					productCategory = 0;// update so that we dont print out the
 										// same category
 				}
 			}
+			System.out.println("");
+			
 		}
 
 	}
+
+
 
 
 
@@ -280,8 +287,8 @@ public class AmazonStore {
 	 * display the price, rating, name of the product
 	 */
 	private static void displayProductsInfo(Product product) {
-		System.out.println(product.getName() + "[Price:$" + product.getPrice()
-				+ " Rating:" + product.getRating() + "starts");
+		System.out.println(product.getName() + " [Price:$" + product.getPrice()
+				+ " Rating:" + product.getRating() + " stars]");
 
 	}
 
@@ -339,7 +346,7 @@ public class AmazonStore {
 		
 		if( currentUser.removeFromWishList(para[1])==null)
 		{
-			System.out.println("Product not gound");
+			System.out.println("Product not found");
 		}
 		else{
 			System.out.println("Removed from wishlist");

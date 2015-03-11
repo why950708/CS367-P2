@@ -1,12 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////
 //                   ALL STUDENTS COMPLETE THESE SECTIONS
-// Main Class File:  (name of main application class)
-// File:             (name of this class's file)
-// Semester:         CS302 Spring 2015
+// Main Class File:  (AmazonStore.java)
+// File:             (Product.java)
+// Semester:         CS367 Spring 2015
 //
-// Author:           (your name and email address)
-// CS Login:         (your login name)
-// Lecturer's Name:  (name of your lecturer)
+// Author:           (Hongyi Wang)
+// CS Login:         (hongyi)
+// Lecturer's Name:  (Jim)
 // Lab Section:      (your lab section number)
 //
 /**
@@ -74,7 +74,7 @@ public class Product {
      * Returns the Product's information in the following format: <NAME> [Price:$<PRICE> Rating:<RATING> stars]
      */
 	public String toString(){
-		return name+ "[ Price:$"+price+" Rating:"+rating+"stars]";
+		return name+ "[Price:$"+price+" Rating:"+rating+"stars]";
 	}
 
 }
